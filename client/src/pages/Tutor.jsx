@@ -79,7 +79,7 @@ export default function Tutor() {
     <div
       className="container-fluid mt-4 shadow rounded"
       style={{
-        maxWidth: "1000px",
+        maxWidth: "1400px",
         height: "90vh",
         display: "flex",
         border: "1px solid #dee2e6",
@@ -91,9 +91,11 @@ export default function Tutor() {
       <div
         className="border-end p-3"
         style={{
-          width: "280px",
+          minWidth: "320px",
+          maxWidth: "320px",
           background: "#f8f9fa",
           overflowY: "auto",
+          flexShrink: 0,
         }}
       >
         <h5 className="mb-4 text-center">🤖 AI Tutors</h5>
@@ -107,6 +109,7 @@ export default function Tutor() {
               border: "1px solid #dee2e6",
               cursor: ai.comingSoon ? "not-allowed" : "pointer",
               opacity: ai.comingSoon ? 0.6 : 1,
+              whiteSpace: "nowrap",
             }}
             onClick={() => {
               if (!ai.comingSoon) setSelectedAI(ai);
@@ -127,7 +130,7 @@ export default function Tutor() {
               <div>{ai.name}</div>
             </div>
             {ai.comingSoon && (
-              <span className="badge bg-secondary text-white">Coming Soon</span>
+              <span className="badge bg-secondary text-white ms-2">Coming Soon</span>
             )}
           </div>
         ))}
